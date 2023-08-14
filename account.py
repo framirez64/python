@@ -1,4 +1,4 @@
-class account():
+class Account():
     """Class containing functions for determining account balance"""
     def __init__(self,name: str): 
         """
@@ -6,30 +6,30 @@ class account():
         :param name: Peron's name.
         
         """
-        self._account_name=name
-        self._account_balance=0 #Initial Account Balance
+        self.__account_name=name
+        self.__account_balance=0 #Initial Account Balance
 
-    def deposit(self,amount: int):
+    def deposit(self,amount: float):
         """
         Method for depositing money.
         :param amount: Person's depositing amount
         :return: True if the deposit was successful, False otherwise.
         """
         if amount>0:
-            self._account_balance=self._account_balance+amount #Adds deposit to account balance
+            self.__account_balance=self.__account_balance+amount #Adds deposit to account balance
             return True #If amount is more than zero, return True
         else:
             return False #If deposit is negative or less than 0, return False
         
-    def withdraw(self,amount: int):
+    def withdraw(self,amount: float):
         """
         Method for withdrawing money
         :param amount: Person's withdrawing amount
         :return: True if the deposit was successful, False otherwise.
         """
         if amount >0:
-            if amount <=self._account_balance: #Withdrawl ammount cannot be negative
-                self._account_balance=self._account_balance-amount #Withdraws amount from account balance
+            if amount <=self.__account_balance: #Withdrawl ammount cannot be negative
+                self.__account_balance=self.__account_balance-amount #Withdraws amount from account balance
                 return True  #Withdrawed amount is feasible
             else:
                 return False #If withdrawing amount is more than amount in account
@@ -41,10 +41,10 @@ class account():
         Method for returning the amount in the account balance
         
         """
-        return self._account_balance
+        return self.__account_balance
     
     def get_name(self):
         """
         Method for returning the person's name
         """
-        return self._account_name
+        return self.__account_name
