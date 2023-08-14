@@ -1,6 +1,6 @@
 class Account():
     """Class containing functions for determining account balance"""
-    def __init__(self,name: str): 
+    def __init__(self,name: str) -> None: 
         """
         Method for initializing objects for name and balance.
         :param name: Peron's name.
@@ -9,7 +9,7 @@ class Account():
         self.__account_name=name
         self.__account_balance=0 #Initial Account Balance
 
-    def deposit(self,amount: float):
+    def deposit(self,amount: float) -> bool:
         """
         Method for depositing money.
         :param amount: Person's depositing amount
@@ -21,7 +21,7 @@ class Account():
         else:
             return False #If deposit is negative or less than 0, return False
         
-    def withdraw(self,amount: float):
+    def withdraw(self,amount: float) -> bool:
         """
         Method for withdrawing money
         :param amount: Person's withdrawing amount
@@ -36,14 +36,14 @@ class Account():
         else:
             return False #If amount is less than zero or negative
 
-    def get_balance(self):
+    def get_balance(self) -> float:
         """
         Method for returning the amount in the account balance
         
         """
         return self.__account_balance
     
-    def get_name(self):
+    def get_name(self) -> str:
         """
         Method for returning the person's name
         """
